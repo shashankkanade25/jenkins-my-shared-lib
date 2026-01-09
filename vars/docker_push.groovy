@@ -9,7 +9,7 @@ def call(String credId, String imageName) {
         set -e
         echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
         docker tag "$IMAGE_NAME" "$DOCKER_USER/$IMAGE_NAME"
-        docker push "$DOCKER_USER/$IMAGE_NAME:latest"
+        docker push "$DOCKER_USER/$IMAGE_NAME"
         docker logout
       '''
     }
